@@ -1,1 +1,1 @@
-# my-website
+In my website, I have uploaded a file from my local PC to google drive and then added a link in my website. This is where the file from local system requirement is met. Additionally for my blog post, I have added the content of blogs on the main file but I have linked 2 separate files in the blogs section wherein a user can like and comment on the blog.

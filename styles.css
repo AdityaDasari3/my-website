@@ -1,0 +1,132 @@
+section{
+
+    display: grid;
+    place-items: center;
+    align-content: center;
+
+}
+html {
+    font-size: 40px;
+    scroll-behavior: smooth;
+  }
+
+  h1{
+    font-size:3em
+  }
+
+  h2{
+    font-size: 2em;
+  }
+
+  h3{
+    font-size: 1.4em;
+  }
+
+  button:hover {
+    transform: translateY(-10px); 
+    transition: transform 0.3s ease; 
+}
+
+  ul {
+    margin: 0;
+    padding: 0;
+}
+
+  li {
+    
+    display: inline-block; 
+  
+  }
+  
+  li a {
+    
+    color: white;
+    background-color: darkgreen;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  
+  li a:hover {
+    background-color: gold;
+  }
+
+body{
+    font-size: 1.4em;
+
+}
+
+.container {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blue-bg {
+    background: aqua;
+    color: white;
+  }
+  
+  .black-bg {
+    background: black;
+    color: white;
+  }
+
+.hidden{
+    opacity:0;
+    transition:all 1s;
+    display: flex;
+    flex-direction: column;
+}
+
+.show{
+    opacity: 1;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden; 
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  width:20%;
+  height:90%;
+  display: none; 
+}
+
+.social-links {
+    display: flex; 
+    justify-content: center; 
+}
+
+.instagram-link, .github-link, .gmail-link {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40vh;
+    height: 40vh;
+    text-indent: -9999px;
+    margin: 0 5px; 
+}
+
+.instagram-link {
+  background-image: url('InstagramLogo.png'); 
+}
+.github-link {
+  background-image: url('GithubLogo.png'); 
+}
+.gmail-link{
+  background-image: url('GmailLogo.png');
+}
+
+a.instagram-link:hover,
+a.github-link:hover,
+a.gmail-link:hover {
+    transform: translateY(-10px); 
+    transition: transform 0.3s ease; 
+}

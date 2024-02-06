@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar: The Last Airbender Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .blue-bg {
+            background-color: darkblue;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 5px;
+        }
+        .comment-section {
+        background-color: red; 
+        padding: 20px; 
+    }
+        .comment-input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .comments-list {
+            
+            list-style-type: none;
+            padding: 0;
+        }
+        .comments-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Blog: Avatar The Last Airbender</h1>
+    <p class="blue-bg">Avatar the last air bender is the greatest cartoon (not including anime) that has ever been created. It has great world building, complex, realistic characters each with their own flaws who get great development. There are many very compelling villains as well. The animation and visuals especially during certain fights are incredible despite of how long ago it was released. It has many incredible themes and is inspired by various cultures around the world. It is obvious from the start that the creators have done their research and so many cultures are incredibly represented. Avatar has a great balance between humour and serious moments making it incredibly enjoyable both as a first time watch as well as a rewatch. There are many incredible small details laid out throughout the show. It can be watched and enjoyed by all age ranges. It has had an incredible cultural impact as well with passionate fans and passionate discussions going on to this day. It is difficult to think of a show with so many such great aspects. I rest my case.</p>
+
+    
+    <div>
+        <button id="like-button" class="button">👍 Like</button>
+        <span id="like-count">0</span> Likes
+    </div>
+
+   
+    <div>
+        <form id="comment-form">
+            <textarea class="comment-input" placeholder="Write a comment..." style="background-color: red;"></textarea>
+            <button type="submit" class="button">Comment</button>
+        </form>
+        <ul id="comments-list" class="comments-list"></ul>
+    </div>
+
+    <script>
+        // Like Counter
+        const likeButton = document.getElementById('like-button');
+        const likeCountElement = document.getElementById('like-count');
+        likeButton.addEventListener('click', () => {
+            let likeCount = parseInt(localStorage.getItem('avatarLikeCount') || 0);
+            likeCount++;
+            localStorage.setItem('avatarLikeCount', likeCount);
+            likeCountElement.textContent = likeCount;
+        });
+
+        // Comments Section
+        const commentForm = document.getElementById('comment-form');
+        const commentsList = document.getElementById('comments-list');
+        commentForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const commentInput = commentForm.querySelector('.comment-input');
+            const commentText = commentInput.value.trim();
+            if (commentText !== '') {
+                let comments = JSON.parse(localStorage.getItem('avatarComments') || '[]');
+                comments.push(commentText);
+                localStorage.setItem('avatarComments', JSON.stringify(comments));
+                displayComments(comments);
+                commentInput.value = '';
+            }
+        });
+
+        function displayComments(comments) {
+            commentsList.innerHTML = '';
+            comments.forEach(comment => {
+                const commentItem = document.createElement('li');
+                commentItem.textContent = comment;
+                commentsList.appendChild(commentItem);
+            });
+        }
+
+        // Initialize: Retrieve data from local storage and display it
+        window.addEventListener('DOMContentLoaded', () => {
+            const likeCount = parseInt(localStorage.getItem('avatarLikeCount') || 0);
+            likeCountElement.textContent = likeCount;
+
+            const comments = JSON.parse(localStorage.getItem('avatarComments') || '[]');
+            displayComments(comments);
+        });
+    </script>
+
+</body>
+</html>

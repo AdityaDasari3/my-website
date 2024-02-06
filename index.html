@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #centImage{
+            display: block;
+            margin: 0 auto;
+            height: 30vh;
+        }
+
+        #colorToggle {
+            width: 60vh;
+            height: 8vh;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #colorToggle:hover {
+            background-color: #666;
+        }
+
+        nav {
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href=styles.css>
+    <script src="dynamic.js"></script>
+</head>
+<body style="background-color: black; color: white;" onload="alternateImages(); alternateImages1()">
+    <h1 style="text-align:center">My Website</h1>
+    
+    <section>
+    <button id="colorToggle" >Toggle Dark/Light </button>
+    </section>
+
+
+    <nav>
+        <ul>
+            <li><a href="#About Me">About Me</a></li>
+            <li><a href="#Educational Background">Educational Background</a></li>
+            <li><a href="#Achievements">Achievements</a></li>
+            <li><a href="#Blogs">Blogs</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Socials">Socials</a></li>
+            <li style="margin-top: 40px;"><a href="#File">Local System File</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+    <section class="hidden">
+
+        <h2 id="About Me">About Me</h2>
+        <div style="overflow: hidden;">
+            <img src="ProfilePic.png" style="width: 50%; height: auto;float: left;" >
+            <p class="blue-bg" style="margin-top: 0;">
+             My name is Aditya Dasari and I am studying in IIIT hyderabad as a CSE major. I was born and lived the first 11 years of my life in the USA and ever since have been living in Hyderabad. I am a somewhat shy person although i have never found it difficult to make friends. I am also an anime addict, movies binger and huge sports fan which leads to me being very competitive. I enjoy chit chat and meeting new people (although i definitely prefer if they start the conversations). I spend most of my time in the gym, on the court or studying in a class or workspace. Life is quite hectic in IIT although I enjoy the grind. I like to push myself to be better everyday and build good habits.   
+            </p>
+        </div>
+    </section>
+
+    <section class="hidden">
+
+        <h2 id="Educational Background">Educational Background</h2>
+        <p class="blue-bg"> I live in USA for the duration of my elementary schol years. So I went to Cactus Ranch Elementary School in Austin Texas until 5th Grad. After this I came to Hyderabad and joined Chirec Public School for 6th-12th grade. This let me get admission into IIIT Hyderabad in which I am a CSE major.</p>
+    </section>
+
+    <section class="hidden">
+        <h2 id="Achievements">Achievements</h2>
+        <p class="blue-bg"> I was a very successful chess and football player in my younger days. In football I was in the top club in my state for my age and we played against other very good clubs across Texas. My greatest achievement in football was the tournament we won where various temas across may different towns and cities competed. In chess I used to regularly go for tournaments as a part of school and compete. I won quite a few awards and trophies for it. I've also won a few baskteball tournaments both school and local ones. I had a great passion for tennis as well in which I participated in local tournaments. I never won anything too major but I do take pride in the fact that I was able to participate and be somewhat successful in so many things.</p>
+    </section>
+
+    
+
+    <section class="hidden">
+        <h2 id="Skills">Skills</h2>
+        <div>
+            <h3 style="float:left">Chess:</h3>
+            <p class="blue-bg">Chess is a game that I have been playing for quite a while. I started when I was incredibly young and quickly fell in love. It contains deep strategy and I deeply enjoy an intellectual challenge. I've developed my skills and played and did well in quite a few tournaments when i was younger</p>
+        </div>
+
+        <img id="centImage" src="Pawn.png">
+        <div>
+            <h3 style="float:left">Running:</h3>
+            <p class="blue-bg">Running is something that gives me a high like no other. It is something that I worked hard on for a long time and became quite good at. It can be quite challenging and forces us to push past our physical limits. Here in IIIT I won the 1500m event on Sports Day. </p>
+
+        </div>
+        
+        <div class="image-container">
+            
+            <img src="" >
+            <img src="" >
+            <img src="" >
+            <img src="" >
+        </div>
+
+        <div>
+            <h3 style="float:left">Cooking:</h3>
+            <p class="blue-bg">Cooking is something that I picked up during Covid. While its nothing that I have won an award at or anyhting like that it is something I enjoy and I believe that I can make some great quesadillas. It is a nice hobby with a great reward at the end which whould also help me out during other times in life.  </p>
+
+        </div>
+        
+        <img  src="Cooking.png">
+        <div>
+            <h3 style="float:left">Gaming:</h3>
+            <p class="blue-bg">Gaming is something that I have been doing for my whole life. It is a great way to have fun with friends as well as escape realtiy for a bit. If done in control it is great for anybody. I am quite good at a few games like fortnite as well as FIFA.  </p>
+
+        </div>
+
+        <img src="Gaming.png">
+    </section>
+
+    <section class="hidden">
+        <h2 id="Blogs">Blogs</h2>
+        <h3>Blog 1: Avatar The Last Airbender</h3>
+        <p class="blue-bg"> Avatar the last air bender is the greatest cartoon( not including anime) that has ever been created. It has great world building, complex, realistic characters each with their own flaws who get great development. There are many very compelling villains as well. The animation and visuals especially during certain fights are incredible despite of how long ago it was released. It has many incredible themes and is inspired by various cultures around the world. It is obvious from the start that the creators have done their research and so many cultures are incredibly represented. Avatar has a great balance between humour and serious moments making it incredibly enjoyable both as a first time watch as well as a rewatch. There are many incredible small details laid out throughout the show.  It can be watched and enjoyed by all age ranges.  It has had an incredible cultural impact as well with passionate fans and passionate discussions going on to this day.  It is difficult to think of a show with so many such great aspects. I rest my case.</p>
+        <h3>Blog 2:Power of Positive Thinking</h3>
+        <p class="blue-bg"> Positive thinking is a powerful mindset that focuses on the bright side of life, cultivating optimism and resilience in the face of challenges. It involves consciously choosing to see the positive side of situations, reframing negative situations into opportunities for growth and learning. By maintaining a positive outlook, individuals can enhance their overall wellness, boost their mood, and reduce stress levels. Positive thinking fosters a sense of hope, empowering individuals to overcome obstacles with determination and perseverance. It enables them to approach life with gratitude, appreciation, and a sense of abundance, leading to greater happiness and fulfillment in both personal and professional endeavors.</p>
+    
+        <a href="file:///home/adityareddydasari3/Desktop/ISS%20Assignment%201/blog1.html"> Visit My Avatar Blog Page</a>
+        <a href="file:///home/adityareddydasari3/Desktop/ISS%20Assignment%201/blog2.html"> Visit My Positive Thinking Blogpage</a>
+    </section>
+
+    <section class="hidden">
+        <h2 id="Socials">Socials</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/aditya._573/" class="instagram-link">Link Button</a>
+            <a href="https://github.com/AdityaDasari3" class="github-link">Link Button</a>
+            <a href="mailto:adityareddy.dasari@gmail.com" class="gmail-link">Send email</a>
+        </div>
+    </section>
+    
+    <section class="hidden">
+        <h2 id="File">File From Local System</h2>
+    <a href="https://drive.google.com/file/d/1a5PU-piMNydzY0aTNqWV-eZJk6IoPOdt/view?usp=drive_link">Download a BinaryTreeCode</a>
+    </section>
+</div>
+</body>
+</html>

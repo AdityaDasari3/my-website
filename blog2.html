@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power of Positive Thinking Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+        .blue-bg {
+            background-color: darkblue;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 5px;
+        }
+        .comment-section {
+            background-color: red; 
+            padding: 20px; 
+        }
+        .comment-input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .comments-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .comments-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            
+            border-radius: 5px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Blog: The Power of Positive Thinking</h1>
+    <p class="blue-bg">Positive thinking is a powerful mindset that focuses on the bright side of life, cultivating optimism and resilience in the face of challenges. It involves consciously choosing to see the positive side of situations, reframing negative situations into opportunities for growth and learning. By maintaining a positive outlook, individuals can enhance their overall wellness, boost their mood, and reduce stress levels. Positive thinking fosters a sense of hope, empowering individuals to overcome obstacles with determination and perseverance. It enables them to approach life with gratitude, appreciation, and a sense of abundance, leading to greater happiness and fulfillment in both personal and professional endeavors.</p>
+
+    <div>
+        <button id="like-button" class="button">👍 Like</button>
+        <span id="like-count">0</span> Likes
+    </div>
+
+    <div>
+        <form id="comment-form">
+            <textarea class="comment-input" placeholder="Write a comment..." style="background-color: red;"></textarea>
+            <button type="submit" class="button">Comment</button>
+        </form>
+        <ul id="comments-list" class="comments-list"></ul>
+    </div>
+
+    <script>
+        const likeButton = document.getElementById('like-button');
+        const likeCountElement = document.getElementById('like-count');
+        likeButton.addEventListener('click', () => {
+            let likeCount = parseInt(localStorage.getItem('positiveLikeCount') || 0);
+            likeCount++;
+            localStorage.setItem('positiveLikeCount', likeCount);
+            likeCountElement.textContent = likeCount;
+        });
+
+        const commentForm = document.getElementById('comment-form');
+        const commentsList = document.getElementById('comments-list');
+        commentForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const commentInput = commentForm.querySelector('.comment-input');
+            const commentText = commentInput.value.trim();
+            if (commentText !== '') {
+                let comments = JSON.parse(localStorage.getItem('positiveComments') || '[]');
+                comments.push(commentText);
+                localStorage.setItem('positiveComments', JSON.stringify(comments));
+                displayComments(comments);
+                commentInput.value = '';
+            }
+        });
+
+        function displayComments(comments) {
+            commentsList.innerHTML = '';
+            comments.forEach(comment => {
+                const commentItem = document.createElement('li');
+                commentItem.textContent = comment;
+                commentsList.appendChild(commentItem);
+            });
+        }
+
+        // Initialize: Retrieve data from local storage and display it
+        window.addEventListener('DOMContentLoaded', () => {
+            const likeCount = parseInt(localStorage.getItem('positiveLikeCount') || 0);
+            likeCountElement.textContent = likeCount;
+
+            const comments = JSON.parse(localStorage.getItem('positiveComments') || '[]');
+            displayComments(comments);
+        });
+    </script>
+
+</body>
+</html>
